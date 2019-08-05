@@ -35,7 +35,7 @@ function startGame() {
     generateGrid();
     generateGame();
     changeCellBrackground('transparent');
-    changeStatus('Cleared', 'white');
+    changeStatus('Click on "Start"', 'white');
     timer = setTimeout(() => changeCellBrackground('white'), parseFloat(element.value) * 1000);
 }
 
@@ -64,7 +64,7 @@ function changeStatus(text, color) {
 
 function revealCell(element) {
     if (element.innerHTML === '0' || (order + 1).toString() !== element.innerHTML) {
-        changeStatus('You Lost', 'red');
+        changeStatus('You didn\'t get an apple slice', 'red');
         return generateGrid();
     } else {
         order++;
@@ -73,7 +73,7 @@ function revealCell(element) {
 
     if (element.innerHTML === '9') {
         generateGrid();
-        changeStatus('You Won', 'green');
+        changeStatus('You get an apple slice', 'green');
     }
 }
 
